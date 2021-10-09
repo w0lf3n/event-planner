@@ -1,0 +1,68 @@
+
+@import url(../lib/dom/gui.css);
+
+
+.Application .Main {
+    display: grid;
+    grid-template-areas:
+        "title title"
+        "inputform calendar"
+        "output output"
+        "copyright copyright";
+    grid-template-columns: 30% 70%;
+}
+
+.Title {
+    grid-area: title;
+}
+
+.InputForm {
+    grid-area: inputform;
+}
+
+.Calendar {
+    font-family: sans-serif;
+    grid-area: calendar;
+    padding: 0 10px;
+}
+.Calendar table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    font-size: 0.9em;
+}
+/*
+.Calendar table tr:nth-child(2n) {
+    background-color: #eeeeee;
+}
+*/
+.Calendar table tr:nth-child(n+2):nth-last-child(n+23) td::before {
+    content: "0";
+    color: transparent;
+}
+.Calendar table .Day {
+    border: 1px solid #000;
+}
+.Calendar table .Day .Date {
+    margin-right:  5px;
+}
+.Calendar .Holiday {
+    background: lightgreen;
+}
+.Calendar .FreeDay {
+    background: lightyellow;
+}
+.Calendar .Saturday {
+    background: #ddd;
+}
+.Calendar .Sunday {
+    background: #ccc;
+}
+
+.Output {
+    grid-area: output;
+}
+
+.Copyright {
+    grid-area: copyright;
+}
